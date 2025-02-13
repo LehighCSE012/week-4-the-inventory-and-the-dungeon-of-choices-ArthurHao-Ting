@@ -66,7 +66,7 @@ def acquire_item(inventory,item):
 def display_inventory(inventory):
     """Displays the player's current inventory"""
     if inventory == []:
-        print("Your inventory is empty")
+        print("Your inventory is empty.", end="")
     else:
         for item in inventory:
             print(item)
