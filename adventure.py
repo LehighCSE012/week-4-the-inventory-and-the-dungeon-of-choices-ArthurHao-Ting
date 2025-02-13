@@ -70,7 +70,7 @@ def display_inventory(inventory):
     else:
         print("Your inventory:")
         for index, item in enumerate(inventory, 1):
-            print(f"{index}.{item}")
+            print(f"{index}. {item}")
 
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """Simulates the player exploring the dungeon rooms"""
