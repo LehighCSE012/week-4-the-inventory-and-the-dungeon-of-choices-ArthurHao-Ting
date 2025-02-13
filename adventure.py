@@ -65,11 +65,12 @@ def acquire_item(inventory,item):
 
 def display_inventory(inventory):
     """Displays the player's current inventory"""
-    if inventory == []:
+    if not inventory:
         print("Your inventory is empty.", end="")
     else:
-        for item in inventory:
-            print(item)
+        print("Your inventory:")
+        for index, item in enumerate(inventory):
+            print(f"{index}.{item}")
 
 def enter_dungeon(player_health, inventory, dungeon_rooms):
     """Simulates the player exploring the dungeon rooms"""
