@@ -1,9 +1,7 @@
 '''
 This module implements an adventure game.
 '''
-
 import random
-
 def display_player_status(player_health):
     """Display player's health status"""
     print(f"Your current health: {player_health}")
@@ -58,7 +56,6 @@ def check_for_treasure(has_treasure):
     else:
         print("The monster did not have the treasure. You continue your journey.")
 
-# Inventory System
 def acquire_item(inventory,item):
     """Add items to the inventory"""
     inventory.append(item)
@@ -107,27 +104,18 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
             print("You are barely alive!")
         display_inventory(inventory)
     updated_player_health = print(player_health)
-    return updated_player_health, inventory 
+    return updated_player_health, inventory
 
 def main():
     """Main function"""
     player_health = 100
     monster_health = 70
     has_treasure = random.choice([True, False])
-    
     player_health = handle_path_choice(player_health)
-
     treasure_obtained_in_combat = combat_encounter(player_health, monster_health, has_treasure)
-
     check_for_treasure(treasure_obtained_in_combat)
-
     inventory = []
-    dungeon_rooms = [("A dusty old library", "key", "puzzle", ("You solved the puzzle!", "The puzzle remains unsolved.", -5)),
-    ("A narrow passage with a creaky floor", None, "trap", ("You skillfully avoid the trap!", "You triggered a trap!", -10)),
-    ("A grand hall with a shimmering pool", "healing potion", "none", None),
-    ("A small room with a locked chest", "treasure", "puzzle", ("You cracked the code!", "The chest remains stubbornly locked.", -5))]
-
+    dungeon_rooms = [("A dusty old library", "key", "puzzle", ("You solved the puzzle!", "The puzzle remains unsolved.", -5)), ("A narrow passage with a creaky floor", None, "trap", ("You skillfully avoid the trap!", "You triggered a trap!", -10)), ("A grand hall with a shimmering pool", "healing potion", "none", None), ("A small room with a locked chest", "treasure", "puzzle", ("You cracked the code!", "The chest remains stubbornly locked.", -5))]
     enter_dungeon(player_health, inventory, dungeon_rooms)
-
 if __name__ == "__main__":
     main()
