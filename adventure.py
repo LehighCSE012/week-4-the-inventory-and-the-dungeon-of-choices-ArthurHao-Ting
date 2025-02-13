@@ -104,8 +104,8 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
             player_health = 0
             print("You are barely alive!")
         display_inventory(inventory)
-    updated_player_health = print(player_health)
-    return updated_player_health, inventory
+    print(player_health)
+    return player_health, inventory
 
 def main():
     """Main function"""
