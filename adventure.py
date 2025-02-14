@@ -78,7 +78,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
         if item:
             print(f"You found a {item} in the room.")
             inventory = acquire_item(inventory,item)
-        if challenge_type == "puzzle":
+        if challenge_type is "puzzle":
             print("You encounter a puzzle!")
             choice = input("Do you want to solve or skip the puzzle?")
             if choice == "solve":
@@ -87,7 +87,7 @@ def enter_dungeon(player_health, inventory, dungeon_rooms):
                 if not success:
                     health_change = challenge_outcome[2]
                     player_health += health_change
-        elif challenge_type == "trap":
+        elif challenge_type is "trap":
             print("You see a potential trap!")
             choice = input("disarm or bypass the trap?")
             if choice == "disarm":
