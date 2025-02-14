@@ -22,8 +22,7 @@ def handle_path_choice(player_health):
 def player_attack(monster_health):
     """Player attacks the monster"""
     print("You strike the monster for 15 damage!")
-    updated_monster_health = monster_health - 15
-    return updated_monster_health
+    return monster_health - 15
 
 def monster_attack(player_health):
     """Monster attacks the player"""
@@ -60,8 +59,7 @@ def acquire_item(inventory,item):
     """Add items to the inventory"""
     inventory.append(item)
     print(f"You acquired a {item}!")
-    updated_inventory_list = [item]
-    return updated_inventory_list
+    return inventory
 
 def display_inventory(inventory):
     """Displays the player's current inventory"""
