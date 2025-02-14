@@ -115,10 +115,13 @@ def main():
     check_for_treasure(treasure_obtained_in_combat)
     inventory = []
     dungeon_rooms = [
-    ("A dusty old library", "key", "puzzle", ("You solved the puzzle!", "The puzzle remains unsolved.", -5)),
-    ("A narrow passage with a creaky floor", None, "trap", ("You skillfully avoid the trap!", "You triggered a trap!", -10)),
+    ("A dusty old library", "key", "puzzle", 
+        ("You solved the puzzle!", "The puzzle remains unsolved.", -5)),
+    ("A narrow passage with a creaky floor", None, "trap", 
+        ("You skillfully avoid the trap!", "You triggered a trap!", -10)),
     ("A grand hall with a shimmering pool", "healing potion", "none", None),
-    ("A small room with a locked chest", "treasure", "puzzle", ("You cracked the code!", "The chest remains stubbornly locked.", -5))]
+    ("A small room with a locked chest", "treasure", "puzzle", \
+        ("You cracked the code!", "The chest remains stubbornly locked.", -5))]
     enter_dungeon(player_health, inventory, dungeon_rooms)
 if __name__ == "__main__":
     main()
